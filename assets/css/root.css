@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: 'Nunito Sans','sans serif';
+}
+
+.ff_roboto{
+     font-family: 'Roboto','sans serif';
+}
+
+:root {
+    --fs-xs: 14px;
+    --fs-sm: 16px;
+    --fs-lg: 16px;
+    --fs-xl: 20px;
+    --fs-2xl: 24px;
+    --color-darkGray: #484848;
+    --color-gray: #F6F6F6;
+    --color-lightGray: #D9D9D9;
+    --color-darkBlack: #080808;
+    --color-disaleBlack: #AFAFAF;
+    --color-orange:#E50914;
+}
+
+/* Font Size Classes */
+.fs_xs {
+    font-size: var(--fs-xs);
+}
+.fs_sm {
+    font-size: var(--fs-sm);
+}
+.fs_lg {
+    font-size: var(--fs-lg);
+}
+.fs_xl {
+    font-size: var(--fs-xl);
+}
+.fs_2xl {
+    font-size: var(--fs-2xl);
+}
+
+/* Text Color Classes */
+.text_darkGray {
+    color: var(--color-darkGray);
+}
+.text_gray {
+    color: var(--color-gray);
+}
+.text_lightGray {
+    color: var(--color-lightGray);
+}
+.text_darkBlack {
+    color: var(--color-darkBlack);
+}
+.text_orange{
+    color:var(--color-orange) !important;
+}
+
+/* background color */
+.bg_darkGray {
+    background-color: var(--color-gray);
+}
+.bg_darkBlack {
+    background-color: var(--color-darkBlack);
+}
+
+@media (min-width:576px) {
+
+    :root {
+   --fs-xs: 14px;
+    --fs-sm: 16px;
+    --fs-lg: 16px;
+    --fs-xl: 22px;
+    --fs-2xl: 26px;
+}
+    
+}
+@media (min-width:768px) {
+
+    :root {
+    --fs-xs: 14px;
+    --fs-sm: 16px;
+    --fs-lg: 18px;
+    --fs-xl: 28px;
+    --fs-2xl: 36px;}
+    
+}
