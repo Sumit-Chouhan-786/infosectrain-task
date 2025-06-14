@@ -362,11 +362,11 @@ border-radius: 8px;
     --bs-accordion-bg: var(--color-darkBlack);
    }
    .accordion::after{
-     --bs-accordion-btn-icon: url(../images/faq-icon.png) !important;
-    --bs-accordion-btn-active-icon:url(../images/faq-icon.png) !important;
+     --bs-accordion-btn-icon: url(../images/faq-icon.webp) !important;
+    --bs-accordion-btn-active-icon:url(../images/faq-icon.webp) !important;
    }
    .accordion-button:not(.collapsed)::after {
-    background-image: url(../images/faq-icon.png);
+    background-image: url(../images/faq-icon.webp);
     rotate: 180deg;
 }
 
