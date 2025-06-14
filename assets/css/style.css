@@ -238,7 +238,13 @@ button.navbar-toggler:focus {
     border: 1px solid #80808080;
 }
 
-
+ .course_sidebar {
+    max-width: 262px;}
+.course_sidebar div button{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
 
 /* media screen */
@@ -347,3 +353,52 @@ border-radius: 8px;
    .lh_180{
     line-height: 180%;
    }
+
+   .accordion{
+    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px;
+    --bs-accordion-bg: var(--color-darkBlack);
+   }
+   .accordion::after{
+     --bs-accordion-btn-icon: url(../images/faq-icon.png) !important;
+    --bs-accordion-btn-active-icon:url(../images/faq-icon.png) !important;
+   }
+   .accordion-button:not(.collapsed)::after {
+    background-image: url(../images/faq-icon.png);
+    rotate: 180deg;
+}
+
+   .accordion-body{
+border-left: 1px solid var(--color-darkGray);
+border-right: 1px solid var(--color-darkGray);
+border-bottom: 1px solid var(--color-darkGray);
+border-top: none;
+  border-radius: 0 0 8px 8px;
+   }
+ 
+   .accordion-button:not(.collapsed) {
+    color: white;
+     border-radius: 8px 8px 0 0 !important;
+    background-color: var(--color-offBlack);
+    box-shadow: none;
+   }
+
+   footer .accordion-button {
+        background-color: var(--color-darkBlack);
+border: 1px solid var(--color-darkGray);
+         padding-top: 12px;
+         border-radius: 8px;
+         padding-bottom: 12px;
+   }
+  .accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-radius: 8px;
+  }
+  .accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
+    border-radius: 8px !important;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none;
+}
