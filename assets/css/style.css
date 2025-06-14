@@ -357,6 +357,8 @@ button.navbar-toggler:focus {
 }
 
 /* Accordion Footer */
+.accordion-button::after {
+    background-image: url(../images/faq-icon.webp) !important;}
 .accordion {
     gap: 24px;
     display: flex !important;
