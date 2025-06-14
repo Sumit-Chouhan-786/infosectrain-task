@@ -260,6 +260,9 @@ button.navbar-toggler:focus {
     }
 }
 @media (max-width: 576px) {
+    .fs_xs_12{
+        font-size: 12px;
+    }
   .course_sidebar {
     max-width: 300px;
     position: absolute;
