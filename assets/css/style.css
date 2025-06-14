@@ -402,3 +402,42 @@ border: 1px solid var(--color-darkGray);
   .accordion-button:focus {
     box-shadow: none;
 }
+
+
+/* chatboat */
+  #chatbot-container {
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            width: 320px;
+            z-index: 1000;
+        }
+        #chatbot-header {
+            cursor: pointer;
+            background-color: var(--color-orange);
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+        }
+        #chatbot-body {
+            display: none;
+            height: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
+            overflow-y: auto;
+        }
+        .chat-message {
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: auto;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            margin-right: auto;
+        }
