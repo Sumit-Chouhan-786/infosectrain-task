@@ -128,13 +128,12 @@
           </button>
 
         </div>
-        <div class="search_category d-flex align-items-center col-sm-6 col-12 justify-content-between">
-          <input class="w-100" id="search-course" placeholder="Search 500+ Courses...." type="text">
-          <label for="search-course">
-            <img src="./assets/images/search-icon.svg" alt="search-icon">
-
-          </label>
-        </div>
+       <div class="search_category d-flex align-items-center col-sm-6 col-12 justify-content-between">
+  <input class="w-100" id="search-course" placeholder="Search 500+ Courses...." type="text" onkeyup="filterCourses()">
+  <label for="search-course">
+    <img src="./assets/images/search-icon.svg" alt="search-icon">
+  </label>
+</div>
       </div>
 
     </div>
@@ -225,7 +224,7 @@
           </div>
 
           <!-- Course Cards -->
-          <div class="col-md-9">
+          <div id="search-results" class="col-md-9">
             <div class="tab-content">
               <!-- Cyber Security -->
               <div class="tab-pane fade show active" id="cyber">

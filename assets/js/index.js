@@ -145,3 +145,66 @@
       this.reset();
     }
   });
+
+
+//   filter
+// Store all course data
+let allCourses = [];
+
+// Initialize course data from the page
+function initializeCourseData() {
+  const courseCards = document.querySelectorAll('.course-card');
+  allCourses = Array.from(courseCards).map(card => {
+    return {
+      element: card.outerHTML,
+      title: card.querySelector('.fw-bold').textContent.trim().toLowerCase(),
+      hours: card.querySelector('.fs_xs.text_darkGray').textContent.trim().toLowerCase(),
+      date: card.querySelector('.mt-3.fs_xs.text_darkGray').textContent.trim().toLowerCase()
+    };
+  });
+}
+
+// Filter courses based on search input
+function filterCourses() {
+  const searchInput = document.getElementById('search-course').value.toLowerCase();
+  const resultsContainer = document.getElementById('search-results');
+  
+  if (!searchInput) {
+    // If search is empty, show all courses in their original containers
+    resultsContainer.innerHTML = '';
+    return;
+  }
+  
+  // Filter courses that match the search term
+  const filteredCourses = allCourses.filter(course => 
+    course.title.includes(searchInput) || 
+    course.hours.includes(searchInput) || 
+    course.date.includes(searchInput)
+  );
+  
+  // Display results
+  displayResults(filteredCourses);
+}
+
+// Display filtered results
+function displayResults(courses) {
+  const resultsContainer = document.getElementById('search-results');
+  
+  if (courses.length === 0) {
+    resultsContainer.innerHTML = '<p>No courses found matching your search.</p>';
+    return;
+  }
+  
+  let html = '<div class="row g-3">';
+  courses.forEach(course => {
+    html += `<div class="col-lg-4 col-md-6">${course.element}</div>`;
+  });
+  html += '</div>';
+  
+  resultsContainer.innerHTML = html;
+}
+
+// Initialize when page loads
+window.onload = function() {
+  initializeCourseData();
+};
