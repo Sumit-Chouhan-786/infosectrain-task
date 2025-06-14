@@ -19,6 +19,8 @@
     --color-darkBlack: #080808;
     --color-disaleBlack: #AFAFAF;
     --color-orange:#E50914;
+    --color-offBlack:#101010;
+    --color-blue:#1C8ADB;
 }
 
 /* Font Size Classes */
@@ -54,6 +56,9 @@
 .text_orange{
     color:var(--color-orange) !important;
 }
+.text_disableBlack{
+    color:var(--color-disaleBlack) !important;
+}
 
 /* background color */
 .bg_darkGray {
@@ -61,6 +66,9 @@
 }
 .bg_darkBlack {
     background-color: var(--color-darkBlack);
+}
+.bg_offBlack {
+    background-color: var(--color-offBlack);
 }
 
 @media (min-width:576px) {
