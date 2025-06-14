@@ -49,3 +49,99 @@
       }
     });
   });
+
+
+//   chatboat
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotHeader = document.getElementById('chatbot-header');
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Toggle chatbot visibility
+            chatbotHeader.addEventListener('click', function() {
+                if (chatbotBody.style.display === 'block') {
+                    chatbotBody.style.display = 'none';
+                    chatbotToggle.className = 'fas fa-chevron-down';
+                } else {
+                    chatbotBody.style.display = 'block';
+                    chatbotToggle.className = 'fas fa-chevron-up';
+                }
+            });
+
+            // Send message on button click
+            sendBtn.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                // Add user message to chat
+                addMessage(message, 'user-message');
+                userInput.value = '';
+
+                // Simulate bot response (replace with API call in real use)
+                setTimeout(() => {
+                    const botResponse = getBotResponse(message);
+                    addMessage(botResponse, 'bot-message');
+                }, 500);
+            }
+
+            function addMessage(text, className) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `${className} chat-message`;
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Simple bot responses (replace with AI/API in production)
+            function getBotResponse(userMessage) {
+                const responses = {
+                    'hello': 'Hi there! How can I assist you?',
+                    'hi': 'Hello! What can I do for you?',
+                    'help': 'I can answer questions. Try asking something!',
+                    'bye': 'Goodbye! Have a great day!',
+                    'default': "I'm not sure how to respond to that. Can you ask differently?"
+                };
+
+                const lowerMsg = userMessage.toLowerCase();
+                return responses[lowerMsg] || responses['default'];
+            }
+        });
+
+
+        // form submit
+
+  document.getElementById('helpForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    const inputs = this.querySelectorAll('[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        isValid = false;
+        input.classList.add('is-invalid'); 
+      } else {
+        input.classList.remove('is-invalid');
+      }
+    });
+
+    if (isValid) {
+      // Show success alert
+      alert('Thank you! Your submission has been received.');
+      // Reset form
+      this.reset();
+    }
+  });
